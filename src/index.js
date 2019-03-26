@@ -5,7 +5,7 @@ module.exports = function getZerosCount(number, base) {
     let i = 0;
     let copyBase = base;
     let zerosCount = 0;
-    let minZerosCount = 999999999999;
+    let minZerosCount ;
     let extraDivide = 0;
     let arrDivide = [];
     let num = number;
@@ -30,7 +30,7 @@ module.exports = function getZerosCount(number, base) {
             zerosCount += num;
         }
         zerosCount = Math.floor(zerosCount / arrDivide[i])
-        if (minZerosCount > zerosCount) minZerosCount = zerosCount;
+        if (minZerosCount > zerosCount || !minZerosCount) minZerosCount = zerosCount;
     }
     return minZerosCount;
 }
